@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <h1><%= title %></h1>
+      <a href="/new">Compose</a>
+    </nav>
+  
+    <div class="message_board">
+      <% messages.forEach((message)=> {%>
+        <div class="message_container <%= message.css%>">
+            <h2 class="user"><%= message.user%></h2>
+          <p class="message"><%=message.text%></p>
+          <p class="date"><%=message.formatTime()%></p>
+        </div>
+      <%});%>
+    </div>
+  </body>
+</html>
